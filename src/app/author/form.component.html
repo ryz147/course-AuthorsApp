@@ -1,0 +1,12 @@
+<form (ngSubmit)="handleFormSubmit()" [formGroup]="authorForm">
+<div class="form-group">
+<label for="authorName">AuthorName</label>
+<input type="text" class="form-control" formControlName="authorName" >
+<div class="alert alert-danger" *ngIf="authorForm.get('authorName').touched && authorForm.get('authorName').invalid ">
+<div *ngIf="authorForm.get('authorName').errors.required">
+    Enter correct authorName!!!!
+</div> 
+</div>
+<button class="btn btn-primary" type="submit" [disabled]="authorForm.invalid">Submit</button> 
+</div> 
+</form>
